@@ -2125,6 +2125,22 @@ input[type="email"] {
   display: none;
 }
 
+.icon.circle.bluesky {
+  background: #85b2ff;
+  color: #fff;
+}
+
+.icon.circle.bluesky:hover {
+  background: #96bfff;
+}
+
+.icon.circle.bluesky img {
+  /* If you want the logo to appear about the same size 
+     as the FontAwesome icons inside their 2.25em circle: */
+  max-width: 1em;
+  max-height: 1em;
+  vertical-align: middle; /* keeps it centered vertically */
+}
 /* List */
 
 ol {
@@ -2677,7 +2693,7 @@ button.small,
   background-attachment: scroll, scroll, scroll, fixed;
   background-color: #645862;
   background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"),
-    url("../../images/banner.jpg");
+    url("../../images/banner.webp");
   background-position: bottom left, bottom right, top left, top center;
   background-repeat: no-repeat, no-repeat, repeat, no-repeat;
   background-size: 25em, 25em, auto, cover;
@@ -2777,7 +2793,7 @@ body.index #main {
   background-attachment: scroll, scroll, scroll, fixed;
   background-color: #645862;
   background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"),
-    url("../../images/banner.jpg");
+    url("../../images/banner.webp");
   background-position: top left, top right, top left, bottom center;
   background-repeat: no-repeat, no-repeat, repeat, no-repeat;
   background-size: 25em, 25em, auto, cover;
