@@ -1990,13 +1990,14 @@ input[type="email"] {
 .sponsor-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem; /* space between the image and text */
 }
 
 /* Styling for Sponsor Banner Logos */
 .sponsor-img {
-  max-height: 80px; /* adjust based on your logo dimensions */
-  width: auto;
+  max-width: 100%;
+  max-height: 80px;
 }
 
 /* Icon */
