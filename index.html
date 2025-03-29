@@ -210,6 +210,57 @@
         </section>
       </article>
 
+      <!-- Mentors -->
+      <section class="wrapper style1 container" style="padding-top: 1rem">
+        <div class="row gtr-uniform" style="margin-bottom: 2rem">
+          <div class="col-12" style="text-align: center">
+            <h3>Senior Researchers</h3>
+          </div>
+        </div>
+        <div id="senior-researchers" class="row gtr-uniform" style="margin-bottom: 2rem">
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/agnieszka_falenska.jpg" alt="Agnieszka Faleńska" class="organizer-img" />
+            <h4>Agnieszka Faleńska</h4>
+            <p>University of Stuttgart</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/anne_lauscher.jpg" alt="Anne Lauscher" class="organizer-img" />
+            <h4>Anne Lauscher</h4>
+            <p>University of Hamburg</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/barbera_plank.jpg" alt="Barbera Plank" class="organizer-img" />
+            <h4>Barbera Plank</h4>
+            <p>LMU Munich</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/diego_frassinelli.png" alt="Diego Frassinelli" class="organizer-img" />
+            <h4>Diego Frassinelli</h4>
+            <p>LMU Munich, University of Konstanz</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/gabriella_lapesa.jpg" alt="Gabriella Lapesa" class="organizer-img" />
+            <h4>Gabriella Lapesa</h4>
+            <p>University of Stuttgart</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/goran_glavas.jpg" alt="Goran Glavaš" class="organizer-img" />
+            <h4>Goran Glavaš</h4>
+            <p>University of Würzburg</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/rico_sennrich.jpeg" alt="Rico Sennrich" class="organizer-img" />
+            <h4>Rico Sennrich</h4>
+            <p>University of Zurich</p>
+          </div>
+          <div class="senior col-3" style="text-align: center">
+            <img src="images/flor_plaza.png" alt="Flor Plaza" class="organizer-img" />
+            <h4>Flor Plaza</h4>
+            <p>Leiden University</p>
+          </div>
+        </div>
+      </section>
+
       <!-- ORGANIZERS -->
       <section class="wrapper style1 container" style="padding-top: 1rem">
         <div class="row gtr-uniform" style="margin-bottom: 2rem">
@@ -217,23 +268,23 @@
             <h3>Organizers</h3>
           </div>
         </div>
-        <div class="row gtr-uniform" style="margin-bottom: 2rem">
-          <div class="col-3" style="text-align: center">
+        <div id="organizers" class="row gtr-uniform" style="margin-bottom: 2rem">
+          <div class="organizer col-3" style="text-align: center">
             <img src="images/esra.jpg" alt="Esra Dönmez" class="organizer-img" />
             <h4>Esra Dönmez</h4>
             <p>University of Stuttgart</p>
           </div>
-          <div class="col-3" style="text-align: center">
+          <div class="organizer col-3" style="text-align: center">
             <img src="images/neele.jpeg" alt="Neele Falk" class="organizer-img" />
             <h4>Neele Falk</h4>
             <p>University of Stuttgart</p>
           </div>
-          <div class="col-3" style="text-align: center">
+          <div class="organizer col-3" style="text-align: center">
             <img src="images/florian.png" alt="Florian Schneider" class="organizer-img" />
             <h4>Florian Schneider</h4>
             <p>University of Hamburg</p>
           </div>
-          <div class="col-3" style="text-align: center">
+          <div class="organizer col-3" style="text-align: center">
             <img src="images/andreas.jpg" alt="Andreas Waldis" class="organizer-img" />
             <h4>Andreas Waldis</h4>
             <p>TU Darmstadt, Applied University of Lucerne</p>
@@ -313,5 +364,38 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        function shufflePeople(containerId, peopleClass) {
+          var people = $(containerId + " " + peopleClass).get();
+
+          // Shuffle the array using Fisher-Yates algorithm
+          for (var i = people.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = people[i];
+            people[i] = people[j];
+            people[j] = temp;
+          }
+
+          $(containerId).addClass("shuffling");
+
+          setTimeout(function () {
+            $.each(people, function (index, senior) {
+              $(containerId).append(senior);
+            });
+            $(containerId).removeClass("shuffling");
+          }, 300);
+        }
+
+        setInterval(function () {
+          shufflePeople("#senior-researchers", ".senior");
+        }, 5000);
+
+        setInterval(function () {
+          shufflePeople("#organizers", ".organizer");
+        }, 5000);
+      });
+    </script>
   </body>
 </html>

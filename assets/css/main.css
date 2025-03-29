@@ -3592,3 +3592,30 @@ section.program .col-4 {
   font-size: 0.9rem;
   margin-left: 0.5rem;
 }
+
+/* Senior Researchers Shuffler Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#senior-researchers.shuffling,
+#organizers.shuffling {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+#senior-researchers,
+#organizers {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+#senior-researchers .senior,
+#organizers .organizer {
+  transition: all 0.5s ease;
+}
