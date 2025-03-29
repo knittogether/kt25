@@ -3521,11 +3521,13 @@ section.program .row.gtr-uniform {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  align-items: stretch;
 }
 
 section.program .col-4 {
   flex: 1 1 calc(33.333% - 1rem);
   display: flex;
+  min-height: 0; /* Prevent minimum height from stretching */
 }
 
 /* Day card styling */
@@ -3537,26 +3539,51 @@ section.program .col-4 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: auto; /* Allow natural height */
 }
 
-/* Session block styling to equally split the card's vertical space */
+.day-card h3 {
+  margin-bottom: 0.5rem; /* Reduce margin */
+}
+
+/* Session block styling with optimized spacing */
 .session-block {
-  flex: 1;
-  margin: 0.5rem 0;
-  padding: 1rem 0 0 1rem;
-  border-left: 4px solid darkslategray;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0 0.5rem 0.75rem;
   background: #f9f9f9;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+/* Food events get forest green borders */
+.session-block.morning-breakfast,
+.session-block.lunch,
+.session-block.dinner {
+  border-left: 4px solid forestgreen;
+}
+
+/* Social events get purple borders */
+.session-block.evening {
+  border-left: 4px solid purple;
+}
+
+/* All other events get orange borders */
+.session-block.morning,
+.session-block.afternoon {
+  border-left: 4px solid orange;
 }
 
 .session-block h4 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.25rem;
   font-size: 1.1rem;
   color: darkslategray;
   line-height: 1.2;
+}
+
+.session-block p {
+  margin: 0;
+  line-height: 1.4;
 }
 
 .session-time {
